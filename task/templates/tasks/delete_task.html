@@ -1,0 +1,79 @@
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+<style>
+
+    body {
+        background-color: #638CB8;
+    }
+
+    .a-cancel-button {
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: .375rem 0;
+        background-color: #6BA3E8;
+        color: white;
+        box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+        border: 1px solid #6BA3E8;
+        border-radius: 3px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .submit-button {
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        background-color: #6BA3E8;
+        padding: .375rem .75rem;
+        color: white;
+        box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+        border: 1px solid #6BA3E8;
+        border-radius: 3px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .submit-button:hover {
+        background-color: crimson;
+        border: 1px solid red;
+    }
+
+    .a-cancel-button:hover {
+        background-color: #17a2b8;
+        text-decoration: none;
+        color: white;
+    }
+
+    .center-column {
+        font-size: 16px;
+        width: 550px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .block-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+</style>
+
+
+<form class="center-column" method="post" , action="">
+    <div class="block-info">
+        <p>Are you sure you want to delete?</p>
+        <p>{{ item }}</p>
+        <a class="a-cancel-button" href="{% url 'list' %}">Отменить</a>
+        {% csrf_token %}
+        <input class="submit-button" type="submit" name="Confirm">
+    </div>
+</form>
